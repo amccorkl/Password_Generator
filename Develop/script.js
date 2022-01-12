@@ -1,5 +1,5 @@
 
-// Assignment Code connects to the html button #generate
+// Code connects to the html button #generate
 var generateBtn = document.querySelector("#generate");
 // var copyToClipBoardBtn = document.querySelector("#copy");
 
@@ -12,19 +12,18 @@ var allCharacters = [];
 var returnPassword = "";
 
 
+
 function generatePassword() {     
   //length condition first
   var passwordLength = prompt("How many characters do you want your password to be? \nIt must be between 8 and 128 characters.");
 
-  // var lengthResult = parseInt(passwordLength);
-  // console.log("passwordLength: ", passwordLength);
-
+ 
   //check if password length conditions met
   if((passwordLength < 8) || (passwordLength > 128)) {
     alert("Reminder: your password must be between 8 and 128 characters. Please reenter your character length by clicking on 'Generate Password' again."); 
     return;
 
-    //undefined returned when nothing entered
+    //undefined returned when user enters nothing 
   }
 
     //loop asks user to confirm choices  ????? doesn't work, user can still click cancel and it progresses
