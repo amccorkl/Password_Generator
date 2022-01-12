@@ -17,13 +17,13 @@ function generatePassword() {
   //length condition first
   var passwordLength = prompt("How many characters do you want your password to be? \nIt must be between 8 and 128 characters.");
 
+  // console.log(passwordLength);
+
  
   //check if password length conditions met
-  if((passwordLength < 8) || (passwordLength > 128)) {
+  if(passwordLength < 8 && passwordLength > 128) {
     alert("Reminder: your password must be between 8 and 128 characters. Please reenter your character length by clicking on 'Generate Password' again."); 
-    return;
-
-    //undefined returned when user enters nothing 
+    return; //undefined returned when user enters nothing 
   }
 
     //loop asks user to confirm choices  ????? doesn't work, user can still click cancel and it progresses
@@ -47,18 +47,18 @@ function generatePassword() {
         allCharacters += specialChar
       }
        
-  // didn't work
+  // didn't stop the function from working
       if (!lowerCase && !upperCase && !numbers && !specialChar) {
         return alert("please select ok for each criteria option");
       }
    
-console.log(allCharacters);
+//console.log(allCharacters);
 
-// run the loop that pulls all required letters, numbers, symbols until the length is reached
+// run the loop that pulls all required letters, numbers, symbols until the length is reached 
   for (var i = 0; i < passwordLength; i++) {
     returnPassword += allCharacters[Math.floor(Math.random() * allCharacters.length)];
   }
-  console.log("return password:", returnPassword);
+  console.log(`For return password: ${returnPassword}`);
 
   return returnPassword; 
 }
