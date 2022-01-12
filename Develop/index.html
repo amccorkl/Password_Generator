@@ -7,33 +7,42 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
+    <section>
+      <div class="wrapper">
+        <header>
+          <h1>Password Generator</h1>
+        </header>
 
-      <!-- main body -->
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
+        <!-- main body -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Generate a Password</h2>
+          </div>
+          <div class="card-body">
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password: click 'Generate Password' to begin."
+              aria-label="Generated Password"
+            ></textarea>
+          </div>
 
-        <!-- make button that generates password, added the onclick button, #generate in a functionon js-->
-        <div class="card-footer">
-          <button id="generate" class="btn" onclick="genPassword()">Generate Password</button>
+          <!-- buttons section of main body, including a copy one-->
+          <div class="card-footer">
+            <button id="generate" class="btn">
+              Generate Password
+            </button>
+            
+            <!-- <button id="copy" class="btn" onclick="copied()">
+              Copy to Clipboard -->
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <script src="script2.js"></script>
+    </section>
+
+    <script src="./script.js"></script>
   </body>
 </html>

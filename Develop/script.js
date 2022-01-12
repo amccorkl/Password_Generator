@@ -1,38 +1,92 @@
-// declare variables
-var password = " "
-var passwordLength = (8-128)
-const characters = ""
 
-// Assignment Code connected to the html button id="generate"
+// Assignment Code connects to the html button #generate
 var generateBtn = document.querySelector("#generate");
+// var copyToClipBoardBtn = document.querySelector("#copy");
 
-// Write password to the #password input
+//define variables 
+var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
+var upperCase = "ABCDEFGHIJKLMNOPEQRSTUVWXYZ".split("");
+var specialChar = "!@#$%^&*()_+=-{}][|:;?/>.<,".split("");
+var numbers = "1234567890".split("");
+var allCharacters = [];
+var allResponses = [];
+var returnPassword = "";
+
+
+function generatePassword() {     
+  //length condition first
+  var passwordLength = prompt("How many characters do you want your password to be? \nIt must be between 8 and 128 characters.");
+
+  // var lengthResult = parseInt(passwordLength);
+  // console.log("passwordLength: ", passwordLength);
+
+  //check if password length conditions met
+  if((passwordLength < 8) || (passwordLength > 128)) {
+    alert("Reminder: your password must be between 8 and 128 characters. Please reenter your character length by clicking on 'Generate Password' again."); 
+    return;
+
+    //undefined returned when nothing entered
+  }
+
+    //loop asks user to confirm choices  ????? doesn't work, user can still click cancel and it progresses
+    var askLowerCase = confirm("Click ok to confirm using lower case letters in your password. 'Generator' will not work if you don't click ok.");
+      if (lowerCase) {
+        allCharacters += lowerCase
+      }
+          
+    var askUpperCase = confirm("Click ok to confirm using upper case letters in your password"); 
+      if (upperCase) {
+        allCharacters += upperCase
+      }
+    
+    var askNumbers = confirm("Click ok to confirm using numbers in your password");
+      if (numbers) {
+        allCharacters += numbers
+      }
+    
+    var askSpecialChar = confirm("Click ok to confirm using special characters in your password");
+      if (specialChar) {
+        allCharacters += specialChar
+      }
+       
+  // didn't work
+      if (!lowerCase && !upperCase && !numbers && !specialChar) {
+        return alert("please select ok for each criteria option");
+      }
+   
+console.log(allResponses);
+
+// run the loop that pulls all required letters, numbers, symbols until the length is reached
+  for (var i = 0; i < passwordLength; i++) {
+    var allResponses = Math.floor(Math.random() * allCharacters.length);
+      
+    }
+    // returnPassword += allResponses[Math.floor(Math.random() * allResponses.length)];
+  }
+  console.log("return password:", returnPassword);
+
+  return returnPassword; 
+}
+
+  
+
+// Write the text into the textarea
 function writePassword() {
   var password = generatePassword();
-  // add place for different characters to be chosen        // var characters = "!@#123alpha ";
-  //var passwordLength = 12;
-  //var password = " ";
-  
   var passwordText = document.querySelector("#password");
-
-//for (var i = 0; i <= passwordLength; i++) {        var randomNumber = Math.floor(Math.random()* characters.length);         password+= character.substring(randomNumber,randomNumber + 1); }
-
+  
   passwordText.value = password;
-
 }
 
-// Add event listener to generate button, my button variable
+// add event listener to generate button, with local variables 
 generateBtn.addEventListener("click", writePassword);
-  let char
 
 
-function getElementByClass(btn); {
-  prompt
-}
-
-// variables of letters
-// variables of numbers
-// variables symbols
 
 
-// make the screen info responsive
+
+
+// var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// var upperCase = ["A", "B", "C","D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "{", "}", "[", "]", "|", ":", "<", ">", ",", ".", "?", "/"];
+// var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
