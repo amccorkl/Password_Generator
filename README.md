@@ -5,16 +5,18 @@ This responsive application uses the dynamic functions of Javascript to create a
 ## Specific Details
 
 The application asks for 
-    1. Length: 8-128 characters
-    2. Character Types (upper and lower case alpha, numbers, and special characters)
+1. Length: 8-128 characters
+2. Character Types (upper and lower case alpha, numbers, and special characters)
 
 
 ## Mock-up
 
 The following image shows the application's appearance:
 
-![password generator](./Assets/screenshot.jpg)
+![password generator](Assets/screenshot_of_project.jpeg)
 
-![password generator](.)
+
+
+
 
 
