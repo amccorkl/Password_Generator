@@ -9,7 +9,6 @@ var upperCase = "ABCDEFGHIJKLMNOPEQRSTUVWXYZ".split("");
 var specialChar = "!@#$%^&*()_+=-{}][|:;?/>.<,".split("");
 var numbers = "1234567890".split("");
 var allCharacters = [];
-var allResponses = [];
 var returnPassword = "";
 
 
@@ -54,14 +53,11 @@ function generatePassword() {
         return alert("please select ok for each criteria option");
       }
    
-console.log(allResponses);
+console.log(allCharacters);
 
 // run the loop that pulls all required letters, numbers, symbols until the length is reached
   for (var i = 0; i < passwordLength; i++) {
-    var allResponses = Math.floor(Math.random() * allCharacters.length);
-      
-    }
-    // returnPassword += allResponses[Math.floor(Math.random() * allResponses.length)];
+    returnPassword += allCharacters[Math.floor(Math.random() * allCharacters.length)];
   }
   console.log("return password:", returnPassword);
 
